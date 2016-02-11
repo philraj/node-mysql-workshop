@@ -7,12 +7,12 @@ var connection = mysql.createConnection({
   database : 'addressbook'
 });
 
-connection.query("SELECT * FROM Account", function(err, rows, fields) {
+connection.query("show databases", function(err, rows, fields) {
   if (err) throw err;
-  
-  rows.forEach(function(row) {
-    console.log(row);
-  });
 
+  rows.forEach(function(row, i) {
+    console.log(i+1, row.Database);
+  });
+  
   connection.end();
 });
