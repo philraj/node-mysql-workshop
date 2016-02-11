@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var colors = require('colors');
 
 var connection = mysql.createConnection({
   host     : process.env.IP,
@@ -7,7 +8,7 @@ var connection = mysql.createConnection({
   database : 'addressbook'
 });
 
-connection.query("SELECT * FROM Account", function(err, rows, fields) {
+connection.query("SELECT * from Account", function(err, rows, fields) {
   if (err) throw err;
   
   rows.forEach(function(row) {
