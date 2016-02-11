@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var colors = require('colors');
+var Table = require('cli-table');
 
 var connection = mysql.createConnection({
   host     : process.env.IP,
